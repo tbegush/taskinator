@@ -38,7 +38,8 @@ var taskFormHandler = function (event) {
   }
 };
 
-var createTaskEl = function (taskDataObj) {
+var createTaskEl = function (taskDataObj) 
+{
   taskDataObj.id = taskIdCounter;
   tasks.push(taskDataObj);
   console.log(taskDataObj);
@@ -215,11 +216,20 @@ saveTasks();
 var saveTasks = function() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 
-
 }
 
 
 
+
+var loadTasks = function() {
+  if (tasks === null){
+    tasks = [];
+    return false;
+  };
+  tasks = JSON.parse(tasks);
+
+
+}
 
 
 
